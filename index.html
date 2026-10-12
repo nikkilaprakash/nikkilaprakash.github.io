@@ -121,7 +121,7 @@
 
   /* Rotating stack graph */
   .graph-wrap { display: flex; flex-direction: column; align-items: center; gap: 6px; width: 100%; }
-  .graph { width: 100%; aspect-ratio: 1; cursor: grab; touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+  .graph { width: 100%; aspect-ratio: 1; cursor: grab; touch-action: manipulation; -webkit-tap-highlight-color: transparent; -webkit-user-select: none; user-select: none; }
   .graph.spinning { cursor: grabbing; }
   .graph svg { width: 100%; height: 100%; overflow: visible; }
   .g-ring { fill: none; stroke: var(--line-strong); stroke-width: 1.2; }
@@ -360,7 +360,7 @@
     <div class="metrics">
       <div class="metric"><div class="metric-num" data-count="400" data-suffix="M+">400M+</div><p>users on the consent platform she helped build</p></div>
       <div class="metric"><div class="metric-num" data-count="10" data-suffix="M">10M</div><p>requests a day through her decisioning service</p></div>
-      <div class="metric"><div class="metric-num" data-count="60" data-suffix="%">60%</div><p>less legal processing time with an automated LLM-based validator</p></div>
+      <div class="metric"><div class="metric-num" data-count="60" data-suffix="%">60%</div><p>less legal processing time with a RAG-based compliance validator</p></div>
       <div class="metric"><div class="metric-num" data-count="12" data-suffix="">12</div><p>awards for collaboration, engineering and innovation</p></div>
     </div>
   </div>
@@ -372,12 +372,12 @@
     <h2>About</h2>
     <div class="about-body">
       <p>I bridge engineering and AI, taking ideas from prototype to production systems that run millions of times a day at low latency.</p>
-      <p>At PayPal I developed a real-time consent platform serving PayPal, Venmo and Honey across three regions, built a Spring Boot decisioning service handling 10M requests a day, and shipped LLM tools using GPT-4, RAG and the Model Context Protocol that turned slow, policy-heavy work into self-service. One of those ideas became a filed patent for an autonomous multi-agent system that detects and resolves production errors.</p>
-      <p>I'm now doing an MSc in Computer Science at the University of Edinburgh, focused on machine learning, distributed systems and deploying ML in production. Away from the keyboard, I've mentored new engineers and have spent years volunteering, at PayPal's Tech for Good programme and running campaigns with the National Service Scheme.</p>
+      <p>At PayPal I developed a real-time consent platform serving PayPal, Venmo and Honey across three regions, built a low-latency decisioning service handling 10M requests a day, and shipped LLM tools using the OpenAI API, RAG and the Model Context Protocol that turned slow, policy-heavy work into self-service. One of those ideas became a filed patent for an autonomous multi-agent system that detects and resolves production errors.</p>
+      <p>I'm now doing an MSc in Computer Science at the University of Edinburgh, focused on machine learning, deep learning, distributed systems and deploying ML in production. I'm part of CompSoc, QuantSoc and EdinburghAI, and play badminton for the university club. Away from the keyboard, I've mentored new engineers and have spent years volunteering, at PayPal's Tech for Good programme and running campaigns with the National Service Scheme.</p>
 
       <div class="facts">
         <div class="fact"><i data-icon="cap"></i><div><h3>MSc Computer Science</h3><p>University of Edinburgh, 2026 to 2027</p></div></div>
-        <div class="fact"><i data-icon="pin"></i><div><h3>Based in Edinburgh, UK</h3><p>Open to new opportunities</p></div></div>
+        <div class="fact"><i data-icon="pin"></i><div><h3>Based in Edinburgh, UK</h3><p>Willing to relocate</p></div></div>
       </div>
     </div>
   </div>
@@ -397,14 +397,13 @@
           <h3>Software Engineer</h3>
           <div class="company"><i data-icon="briefcase"></i>PayPal</div>
           <ul>
-            <li>Built an LLM-powered conversational interface with GPT-4 and the Model Context Protocol for privacy queries, cutting ticket resolution times by <b>15%</b> and enabling self-service.</li>
-            <li>Developed an automated compliance validator with LLM-based policy interpretation that reduced legal processing time by <b>60%</b>.</li>
-            <li>Designed a Spring Boot decisioning system processing <b>10M daily requests</b>, using distributed caching for a <b>20%</b> latency reduction across global operations.</li>
-            <li>Built core components of a low-latency Consent Management platform serving PayPal, Venmo and Honey across the Americas, Europe and APAC for <b>400M+ users</b>, with real-time policy evaluation across jurisdictions.</li>
-            <li>Led 2 junior engineers as technical point of contact for <b>17 consent types</b>, designing reusable frameworks that cut requirement onboarding time by <b>40%</b>.</li>
-            <li>Developed a REST API validation layer handling <b>500K daily calls</b> for account creation, upgrades and merchant data use across the PayPal ecosystem.</li>
+            <li>Designed and developed a low-latency decisioning service that handles <b>10M requests/day</b>, enforcing compliance policies across the PayPal ecosystem.</li>
+            <li>Developed an automated compliance validator using RAG for policy interpretation, reducing legal processing time by <b>60%</b>.</li>
+            <li>Technical owner for <b>17 consent types</b>, leading 2 engineers; designed reusable frameworks that cut requirement onboarding time by <b>40%</b>.</li>
+            <li>Built an LLM-powered conversational assistant for privacy queries using the OpenAI API and the Model Context Protocol (MCP), enabling self-service and cutting ticket resolution time by <b>15%</b>.</li>
+            <li>Built core components of a consent management platform serving <b>400M+ users</b> across PayPal, Venmo and Honey in the Americas, Europe and APAC, with real-time policy evaluation across jurisdictions.</li>
           </ul>
-          <div class="tags"><span class="tag">Java</span><span class="tag">LLM fine-tuning</span><span class="tag">RAG</span><span class="tag">MCP</span><span class="tag">Spring Boot</span><span class="tag">Python</span><span class="tag">Kafka</span><span class="tag">BigQuery</span></div>
+          <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Microservices</span><span class="tag">Kafka</span><span class="tag">BigQuery</span><span class="tag">Python</span><span class="tag">AMQ</span><span class="tag">RAG</span><span class="tag">MCP</span></div>
         </div>
       </li>
       <li class="job">
@@ -413,9 +412,9 @@
           <h3>Software Engineering Intern</h3>
           <div class="company"><i data-icon="briefcase"></i>PayPal</div>
           <ul>
-            <li>Built a web crawler automation script in Scala on Apache Spark that processed <b>500K+ URLs</b> for large-scale cookie classification supporting European GDPR compliance, improving system efficiency by <b>30%</b>.</li>
+            <li>Built a web crawler automation that classified cookies across <b>500K+ URLs</b> for European GDPR compliance, improving system efficiency by <b>30%</b>.</li>
           </ul>
-          <div class="tags"><span class="tag">Scala</span><span class="tag">Apache Spark</span><span class="tag">Web crawling</span></div>
+          <div class="tags"><span class="tag">Scala</span><span class="tag">Apache Spark</span></div>
         </div>
       </li>
     </ol>
@@ -456,8 +455,7 @@
           <h3>Cardiovascular Disease Risk Assessment Using Machine Learning</h3>
           <p>First-author work applying supervised learning algorithms to predict cardiovascular risk.</p>
         </div>
-        <!-- TODO: swap in the direct IEEE Xplore link -->
-        <a class="btn btn-outline btn-sm" href="https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=Cardiovascular%20Disease%20Risk%20Assessment%20Using%20Machine%20Learning" target="_blank" rel="noopener">Read paper<i data-icon="arrowUpRight"></i></a>
+        <a class="btn btn-outline btn-sm" href="https://ieeexplore.ieee.org/document/10133957" target="_blank" rel="noopener">Read paper<i data-icon="arrowUpRight"></i></a>
       </article>
     </div>
   </div>
@@ -471,13 +469,13 @@
       <p>Comfortable across the stack, from services to model behaviour, queues and databases around it.</p>
     </div>
     <div class="skills">
-      <div class="skill-row"><h3><i data-icon="code"></i>Languages</h3><div class="chips"><span class="chip">Java</span><span class="chip">Python</span><span class="chip">C++</span><span class="chip">Scala</span><span class="chip">JavaScript</span><span class="chip">SQL</span><span class="chip">HTML/CSS</span></div></div>
-      <div class="skill-row"><h3><i data-icon="sparkles"></i>AI</h3><div class="chips"><span class="chip">LLM fine-tuning</span><span class="chip">Multi-agent architectures</span><span class="chip">Retrieval augmented generation</span><span class="chip">Model Context Protocol</span></div></div>
-      <div class="skill-row"><h3><i data-icon="server"></i>Backend and APIs</h3><div class="chips"><span class="chip">Spring Boot</span><span class="chip">JDBC</span><span class="chip">REST APIs</span><span class="chip">GraphQL</span></div></div>
-      <div class="skill-row"><h3><i data-icon="network"></i>Distributed systems</h3><div class="chips"><span class="chip">Kafka</span><span class="chip">Microservices</span><span class="chip">Apache Spark</span><span class="chip">Event-driven architecture</span><span class="chip">Distributed caching</span><span class="chip">AMQ</span></div></div>
-      <div class="skill-row"><h3><i data-icon="cloud"></i>Cloud and infrastructure</h3><div class="chips"><span class="chip">AWS EC2</span><span class="chip">S3</span><span class="chip">RDS</span><span class="chip">Lambda</span><span class="chip">SageMaker</span><span class="chip">Aurora</span><span class="chip">GCP</span><span class="chip">Docker</span><span class="chip">Load balancing</span><span class="chip">Auto-scaling</span></div></div>
-      <div class="skill-row"><h3><i data-icon="database"></i>Data and storage</h3><div class="chips"><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Oracle DB</span><span class="chip">BigQuery</span><span class="chip">JunoDB</span></div></div>
-      <div class="skill-row"><h3><i data-icon="branch"></i>DevOps and tools</h3><div class="chips"><span class="chip">Git/GitHub</span><span class="chip">Jenkins</span><span class="chip">CI/CD</span><span class="chip">SonarQube</span><span class="chip">JUnit</span><span class="chip">TDD</span><span class="chip">Agile/Scrum</span></div></div>
+      <div class="skill-row"><h3><i data-icon="code"></i>Languages</h3><div class="chips"><span class="chip">Java</span><span class="chip">Python</span><span class="chip">C++</span><span class="chip">Scala</span><span class="chip">SQL</span><span class="chip">JavaScript</span><span class="chip">HTML/CSS</span><span class="chip">XML</span><span class="chip">VBA</span></div></div>
+      <div class="skill-row"><h3><i data-icon="sparkles"></i>AI</h3><div class="chips"><span class="chip">LLMs</span><span class="chip">RAG</span><span class="chip">Multi-agent systems</span><span class="chip">Model Context Protocol (MCP)</span><span class="chip">PyTorch</span><span class="chip">LangChain</span><span class="chip">Hugging Face</span></div></div>
+      <div class="skill-row"><h3><i data-icon="server"></i>Backend and APIs</h3><div class="chips"><span class="chip">Spring Boot</span><span class="chip">JDBC</span><span class="chip">REST APIs</span><span class="chip">GraphQL</span><span class="chip">Microservices</span></div></div>
+      <div class="skill-row"><h3><i data-icon="network"></i>Distributed systems</h3><div class="chips"><span class="chip">Kafka</span><span class="chip">AMQ</span><span class="chip">Apache Spark</span></div></div>
+      <div class="skill-row"><h3><i data-icon="cloud"></i>Cloud and infrastructure</h3><div class="chips"><span class="chip">AWS (EC2, S3, RDS, Lambda, Aurora)</span><span class="chip">GCP</span><span class="chip">Docker</span></div></div>
+      <div class="skill-row"><h3><i data-icon="database"></i>Databases</h3><div class="chips"><span class="chip">MySQL</span><span class="chip">MongoDB</span><span class="chip">Oracle DB</span><span class="chip">BigQuery</span><span class="chip">JunoDB</span></div></div>
+      <div class="skill-row"><h3><i data-icon="branch"></i>DevOps and testing</h3><div class="chips"><span class="chip">Git</span><span class="chip">Jenkins</span><span class="chip">CI/CD</span><span class="chip">SonarQube</span><span class="chip">JUnit</span><span class="chip">Test-driven development (TDD)</span><span class="chip">Agile</span></div></div>
     </div>
   </div>
 </section>
@@ -539,6 +537,32 @@
    ===================================================================== */
 const PROJECTS = [
   {
+    title: "Low-latency exchange simulator",
+    description: "A C++ exchange simulator with a limit order book and a price-time priority matching engine supporting limit, market, IOC and cancel/replace orders.",
+    year: "2026",
+    badge: "In progress",
+    badgeIcon: "code",
+    tags: ["C++", "Order book", "Matching engine"],
+    links: {}
+  },
+  {
+    title: "High-performance GPU backtesting engine",
+    description: "A CUDA backtesting engine that maps each strategy to a GPU thread, sweeping a 15,232-configuration parameter grid over 10,000 minute bars in 34 ms. It runs 12,000\u00d7 faster than a naive Python baseline, 130\u00d7 faster than vectorised PyTorch and 14\u00d7 faster than single-threaded C++, with bit-identical P&L across all four implementations.",
+    year: "Personal project",
+    badge: "12,000\u00d7 faster",
+    badgeIcon: "sparkles",
+    tags: ["CUDA", "C++", "Python", "PyTorch"],
+    featured: true,
+    links: {}
+  },
+  {
+    title: "ML-based equity trading algorithm",
+    description: "A systematic equity strategy on 20 years of daily data for 40 US equities (190K observations), pairing research-backed momentum and reversal factors with a random forest under embargoed validation. Showed that shuffled train/test splits leak future data and overstate predictive power 10\u00d7; backtested net of 5 bps costs and paper-traded via Alpaca.",
+    year: "Personal project",
+    tags: ["Python", "scikit-learn", "pandas", "Alpaca API"],
+    links: {}
+  },
+  {
     title: "Multi-agent privacy compliance",
     description: "Hackathon-winning multi-agent solution for privacy compliance, combining LLM-based policy interpretation with automated compliance validation.",
     year: "PayPal Code.AI",
@@ -559,12 +583,12 @@ const PROJECTS = [
   },
   {
     title: "Cardiovascular risk prediction",
-    description: "Supervised learning models that assess a patient's cardiovascular disease risk from clinical features. Published at ICICT'23 on IEEE Xplore.",
+    description: "First-author paper applying supervised learning to cardiovascular disease risk prediction. Published at ICICT'23 on IEEE Xplore.",
     year: "2023",
     badge: "IEEE paper",
     badgeIcon: "book",
     tags: ["Python", "Machine learning", "Healthcare"],
-    links: { paper: "https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=Cardiovascular%20Disease%20Risk%20Assessment%20Using%20Machine%20Learning" }
+    links: { paper: "https://ieeexplore.ieee.org/document/10133957" }
   }
   // , { title: "Next project", description: "...", year: "2026", tags: ["..."], links: { github: "https://github.com/..." } }
 ];
@@ -755,9 +779,29 @@ document.querySelectorAll('[data-count]').forEach(el => counters.observe(el));
   let a1 = 0, a2 = 0, v = 0, target = 0, last = performance.now(), visible = true, spawn = 0;
   const pulses = [];
 
+  // Mouse: spin while hovering
   box.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') target = SPIN; });
   box.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') target = 0; });
-  box.addEventListener('click', e => { if (e.pointerType !== 'mouse') target = target ? 0 : SPIN; });
+
+  // Touch and pen: a tap toggles the spin. Taps are detected from pointerdown/pointerup,
+  // because some mobile browsers (notably iOS Safari) report taps as "mouse" on the click event.
+  const touchHint = document.querySelector('.hint-touch');
+  function setSpin(on) {
+    target = on ? SPIN : 0;
+    if (touchHint) touchHint.textContent = on ? 'Tap to stop' : 'Tap to spin the stack';
+  }
+  let down = null;
+  box.addEventListener('pointerdown', e => {
+    if (e.pointerType !== 'mouse') down = { x: e.clientX, y: e.clientY, t: performance.now() };
+  });
+  box.addEventListener('pointerup', e => {
+    if (e.pointerType === 'mouse' || !down) return;
+    const moved = Math.hypot(e.clientX - down.x, e.clientY - down.y);
+    const quick = performance.now() - down.t < 600;
+    down = null;
+    if (moved < 12 && quick) setSpin(target === 0);   // ignore swipes and long presses
+  });
+  box.addEventListener('pointercancel', () => { down = null; });   // fired when the touch becomes a scroll
 
   const pos = (i, n, R, a) => { const th = a + i * 2 * Math.PI / n - Math.PI / 2; return [R * Math.cos(th), R * Math.sin(th)]; };
   const line = (l, x1, y1, x2, y2) => { l.setAttribute('x1', x1); l.setAttribute('y1', y1); l.setAttribute('x2', x2); l.setAttribute('y2', y2); };
@@ -766,6 +810,7 @@ document.querySelectorAll('[data-count]').forEach(el => counters.observe(el));
     const dt = Math.min(0.05, (now - last) / 1000); last = now;
     if (!reduce) {
       v += (target - v) * Math.min(1, dt * 2.5);           // ease in on hover, glide to a stop after
+      if (target === 0 && v < 0.01) v = 0;                 // settle fully instead of drifting forever
       a1 -= v * 1.15 * dt; a2 += v * 0.6 * dt;             // rings counter-rotate, so the edges stretch
     }
     box.classList.toggle('spinning', v > 0.05);
